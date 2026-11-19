@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SaunaHouse — sauny, balie, domki i zabudowa ogrodowa</title>
+<meta name="description" content="SaunaHouse — producent saun ogrodowych, saun beczkowych, balii, domków drewnianych, altan i zadaszeń. Katalog z wyceną online.">
+<meta property="og:image" content="https://www.saunahouse.pl/assets/img/Sauny/Ogrodowa/sauna_ogrodowa.PNG">
+<link rel="stylesheet" href="css/style.css?v=36">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="tb-left">
+      <span>POMAGAMY / DORADZAMY</span>
+      <a href="tel:+48695422424">+48 695 422 424</a>
+      <a href="mailto:saunahouse@wp.pl">saunahouse@wp.pl</a>
+    </div>
+    <div class="tb-right">
+      <a href="#/montaz">MONTAŻ</a>
+      <a href="#/galeria">GALERIA</a>
+      <a href="#/kontakt">KONTAKT</a>
+    </div>
+  </div>
+</header>
+<header class="mainhead">
+  <div class="wrap mainhead-in">
+    <a class="logo" href="#/" aria-label="SaunaHouse — strona główna">
+      <img src="https://www.saunahouse.pl/assets/img/Strona_Glowna/saunahouse_logo_male2.png" alt="SaunaHouse" height="40" onerror="this.outerHTML='<svg width=&quot;40&quot; height=&quot;40&quot; viewBox=&quot;0 0 44 44&quot;><rect width=&quot;44&quot; height=&quot;44&quot; rx=&quot;8&quot; fill=&quot;var(--brand)&quot;/><path d=&quot;M10 30 L22 14 L34 30&quot; stroke=&quot;#fff&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot;/></svg>'">
+      <span>SAUNA<b>HOUSE</b></span>
+    </a>
+    <form class="search" onsubmit="return goSearch(event)">
+      <input id="q" type="search" placeholder="Szukaj: sauna beczka, altana…" aria-label="Szukaj">
+      <button type="submit" aria-label="Szukaj">🔍</button>
+    </form>
+    <a class="cta" href="#/wycena">Zapytaj o wycenę</a>
+    <button class="burger" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>
+  </div>
+  <nav class="wrap nav" id="nav"></nav>
+</header>
+<main id="app" class="wrap"></main>
+<footer class="foot">
+  <div class="wrap foot-grid" id="footGrid"></div>
+  <div class="wrap foot-base">
+    <p><b>Sauna House L. Ługiewicz P. Zbrzeski s.c.</b> · ul. Fabryczna 13, 11-040 Dobre Miasto · NIP: 739-387-33-48 · REGON: 360892778</p>
+    <p>☎ <a href="tel:+48695422424">695 422 424</a> · ✉ <a href="mailto:saunahouse@wp.pl">saunahouse@wp.pl</a> · Kup również na <a href="https://allegro.pl/uzytkownik/leszek32l" target="_blank" rel="noopener">Allegro</a> · <a href="https://www.facebook.com/p/Saunahousepl-100077345640359/" target="_blank" rel="noopener">Facebook</a></p>
+    <p>© SaunaHouse. Wszelkie prawa zastrzeżone. <a href="#/polityka">Polityka prywatności</a> · <a href="#/regulamin">Regulamin</a> · <a href="#/mapa">Mapa strony</a> · <a href="#/cookies">Ustawienia cookies</a></p>
+  </div>
+</footer>
+<script src="js/app.js?v=36"></script>
+<script>
+// ===== Cookie consent (RODO/ePrivacy) =====
+(function(){
+  var KEY='sh-consent';
+  function banner(){
+    var b=document.createElement('div');
+    b.id='cookiebar';
+    b.innerHTML=
+    '<div class="ck-card" role="dialog" aria-modal="false" aria-label="Ustawienia plików cookies">'+
+      '<h3>Ustawienia plików cookies 🍪</h3>'+
+      '<p>Używamy plików cookies, aby strona działała poprawnie i aby analizować ruch oraz dopasowywać treści. '+
+      'Możesz zaakceptować wszystkie, uruchomić tylko niezbędne lub wybrać kategorie. Zgodę możesz zmienić w każdej chwili w stopce ('+
+      '<a href="#/cookies" id="ck-link">Ustawienia cookies</a>). Szczegóły: <a href="#/polityka">Polityka prywatności</a>.</p>'+
+      '<div class="ck-cats">'+
+        '<label class="chk" style="opacity:.75;cursor:default"><input type="checkbox" checked disabled> <span><b>Niezbędne</b> — zapis ustawień, bezpieczeństwo (zawsze aktywne)</span></label>'+
+        '<label class="chk"><input type="checkbox" id="ck-anal" checked> <span><b>Analityczne</b> — statystyka odwiedzin</span></label>'+
+        '<label class="chk"><input type="checkbox" id="ck-mkt"> <span><b>Marketingowe</b> — dopasowanie oferty</span></label>'+
+      '</div>'+
+      '<div class="ck-btns">'+
+        '<button class="btn" id="ck-all">Akceptuj wszystkie</button>'+
+        '<button class="btn alt" id="ck-sel">Zapisz wybór</button>'+
+        '<button class="btn" style="background:#f1f5f9;color:#33473c;box-shadow:none" id="ck-ess">Tylko niezbędne</button>'+
+      '</div>'+
+      '<p class="kv" style="margin-top:10px">Administrator danych: Sauna House L. Ługiewicz P. Zbrzeski s.c., ul. Fabryczna 13, 11-040 Dobre Miasto, saunahouse@wp.pl</p>'+
+    '</div>';
+    document.body.appendChild(b);
+    function save(a,m){
+      localStorage.setItem(KEY,JSON.stringify({v:1,d:new Date().toISOString(),n:true,a:a,k:m}));
+      b.remove();
+    }
+    document.getElementById('ck-all').onclick=function(){save(true,true)};
+    document.getElementById('ck-sel').onclick=function(){save(document.getElementById('ck-anal').checked,document.getElementById('ck-mkt').checked)};
+    document.getElementById('ck-ess').onclick=function(){save(false,false)};
+  }
+  window.shCookiesOpen=function(){ if(!document.getElementById('cookiebar')) banner(); else document.getElementById('cookiebar').remove(); };
+  if(!localStorage.getItem(KEY)) setTimeout(banner,600);
+})();
+</script>
+</body>
+</html>
